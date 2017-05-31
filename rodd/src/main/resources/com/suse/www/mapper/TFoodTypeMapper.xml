@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.suse.www.mapper.TFoodTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.suse.www.entity.TFoodType" >
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="food_type" property="foodType" jdbcType="VARCHAR" />
+    <result column="food_type_name" property="foodTypeName" jdbcType="VARCHAR" />
+    <result column="is_cancel" property="isCancel" jdbcType="INTEGER" />
+    <result column="attribute1" property="attribute1" jdbcType="VARCHAR" />
+    <result column="attribute2" property="attribute2" jdbcType="VARCHAR" />
+    <result column="attribute3" property="attribute3" jdbcType="VARCHAR" />
+    <result column="attribute4" property="attribute4" jdbcType="VARCHAR" />
+    <result column="attribute5" property="attribute5" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.suse.www.entity.TFoodType" >
+    insert into t_food_type (id, food_type, food_type_name, 
+      is_cancel, attribute1, attribute2, 
+      attribute3, attribute4, attribute5
+      )
+    values (#{id,jdbcType=BIGINT}, #{foodType,jdbcType=VARCHAR}, #{foodTypeName,jdbcType=VARCHAR}, 
+      #{isCancel,jdbcType=INTEGER}, #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR}, 
+      #{attribute3,jdbcType=VARCHAR}, #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.suse.www.entity.TFoodType" >
+    insert into t_food_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="foodType != null" >
+        food_type,
+      </if>
+      <if test="foodTypeName != null" >
+        food_type_name,
+      </if>
+      <if test="isCancel != null" >
+        is_cancel,
+      </if>
+      <if test="attribute1 != null" >
+        attribute1,
+      </if>
+      <if test="attribute2 != null" >
+        attribute2,
+      </if>
+      <if test="attribute3 != null" >
+        attribute3,
+      </if>
+      <if test="attribute4 != null" >
+        attribute4,
+      </if>
+      <if test="attribute5 != null" >
+        attribute5,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="foodType != null" >
+        #{foodType,jdbcType=VARCHAR},
+      </if>
+      <if test="foodTypeName != null" >
+        #{foodTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="isCancel != null" >
+        #{isCancel,jdbcType=INTEGER},
+      </if>
+      <if test="attribute1 != null" >
+        #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        #{attribute5,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+   <select id="getId" resultType="java.lang.Integer">
+  	select nextval('t_food_type')
+  </select>
+</mapper>

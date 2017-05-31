@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.suse.www.mapper.TFoodCountryMapper" >
+  <resultMap id="BaseResultMap" type="com.suse.www.entity.TFoodCountry" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="food_country" property="foodCountry" jdbcType="VARCHAR" />
+    <result column="food_country_name" property="foodCountryName" jdbcType="VARCHAR" />
+    <result column="is_cancel" property="isCancel" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, food_country, food_country_name, is_cancel
+  </sql>
+  <select id="getId" resultType="java.lang.Integer">
+  	select nextval('t_food_country')
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_food_country
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_food_country
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.suse.www.entity.TFoodCountry" >
+    insert into t_food_country (id, food_country, food_country_name, 
+      is_cancel)
+    values (#{id,jdbcType=INTEGER}, #{foodCountry,jdbcType=VARCHAR}, #{foodCountryName,jdbcType=VARCHAR}, 
+      #{isCancel,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.suse.www.entity.TFoodCountry" >
+    insert into t_food_country
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="foodCountry != null" >
+        food_country,
+      </if>
+      <if test="foodCountryName != null" >
+        food_country_name,
+      </if>
+      <if test="isCancel != null" >
+        is_cancel,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="foodCountry != null" >
+        #{foodCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="foodCountryName != null" >
+        #{foodCountryName,jdbcType=VARCHAR},
+      </if>
+      <if test="isCancel != null" >
+        #{isCancel,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.suse.www.entity.TFoodCountry" >
+    update t_food_country
+    <set >
+      <if test="foodCountry != null" >
+        food_country = #{foodCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="foodCountryName != null" >
+        food_country_name = #{foodCountryName,jdbcType=VARCHAR},
+      </if>
+      <if test="isCancel != null" >
+        is_cancel = #{isCancel,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.suse.www.entity.TFoodCountry" >
+    update t_food_country
+    set food_country = #{foodCountry,jdbcType=VARCHAR},
+      food_country_name = #{foodCountryName,jdbcType=VARCHAR},
+      is_cancel = #{isCancel,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
