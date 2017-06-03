@@ -11,7 +11,7 @@
     </appender>
     
      <appender name="APPLOGFILE" class="org.apache.log4j.RollingFileAppender">
-		<param name="File" value="/opt/cloudhost/jboss/standalone/log/wstax-admin.log" />
+		<param name="File" value="/usr/tomcat9/logs/rodd.log" />
 		<param name="Append" value="true"/>
 		<param name="MaxFileSize" value="5000KB" />
 		<param name="MaxBackupIndex" value="50" />
