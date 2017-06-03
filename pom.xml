@@ -54,7 +54,7 @@
 	                	<artifactId>maven-war-plugin</artifactId>
 	               		<version>2.1.1</version>
 						<configuration>                
-	                    	<warName>suse</warName>
+	                    	<warName>rodd</warName>
 	                    	<webResources>
 	                        	<resource>
 									<directory>src/main/resources</directory>
