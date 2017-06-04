@@ -10,7 +10,7 @@ package com.suse.www.service;
  * @email jian.wang2@hpe.com
  * @date Mar 7, 2017 11:00:31 AM
  */
-public interface ScheduledJobService {
+public interface IScheduledJobService {
 
 	public void refreshSQLStatus();
 	

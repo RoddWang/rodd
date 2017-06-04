@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import com.suse.www.service.ScheduledJobService;
+import com.suse.www.service.IScheduledJobService;
 import com.suse.www.util.GetSystemCurrentDate;
 import com.suse.www.util.TestThread;
 
@@ -21,7 +21,7 @@ import com.suse.www.util.TestThread;
  */
 @Service
 //@EnableScheduling
-public class ScheduledJobServiceImp implements ScheduledJobService {
+public class ScheduledJobService implements IScheduledJobService {
 	private Logger log = Logger.getLogger(getClass());
 	@Override
 	@Scheduled(cron="2/5 * * * * ?" ) //秒，分，时，天（0-31），月（0-11），周 cron ="*/5 * * *　* ?"
