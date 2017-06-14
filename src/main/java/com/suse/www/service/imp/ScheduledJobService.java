@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.suse.www.service.Impl;
+package com.suse.www.service.imp;
 
 import org.apache.log4j.Logger;
 import org.springframework.scheduling.annotation.EnableScheduling;

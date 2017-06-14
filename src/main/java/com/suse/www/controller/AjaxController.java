@@ -21,10 +21,10 @@ import com.suse.www.service.ITFoodCountryService;
 import com.suse.www.service.ITFoodNameService;
 import com.suse.www.service.ITFoodTypeService;
 import com.suse.www.service.ITUserService;
-import com.suse.www.service.Impl.TFoodCountryService;
-import com.suse.www.service.Impl.TFoodNameService;
-import com.suse.www.service.Impl.TFoodTypeService;
-import com.suse.www.service.Impl.TUserService;
+import com.suse.www.service.imp.TFoodCountryService;
+import com.suse.www.service.imp.TFoodNameService;
+import com.suse.www.service.imp.TFoodTypeService;
+import com.suse.www.service.imp.TUserService;
 
 /**
  * @author Rodd.Wang

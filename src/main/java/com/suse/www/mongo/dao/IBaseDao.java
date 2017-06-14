@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.suse.www.mongo.repository.interfaces;
+package com.suse.www.mongo.dao;
 
 import java.util.List;
 
@@ -22,5 +22,5 @@ public interface IBaseDao<T> {
    
     void updateFirst(T t);  
   
-    void delete(String... ids);  
+    void delete(String  id);  
 }

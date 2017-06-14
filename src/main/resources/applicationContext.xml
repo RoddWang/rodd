@@ -19,7 +19,8 @@
 	
 	 <!-- 引入同文件夹下的redis属性配置文件 -->
     <!-- <import resource="redis-context.xml"/> -->
-    
+    <!-- 引入同文件夹下的mongodb属性配置文件 -->
+    <import resource="mongodb-context.xml"/> 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${jdbc.driver}"/>
         <property name="url" value="${jdbc.url}"/>

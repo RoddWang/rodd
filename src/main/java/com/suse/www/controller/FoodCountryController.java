@@ -8,7 +8,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.suse.www.service.Impl.TFoodCountryService;
+import com.suse.www.service.imp.TFoodCountryService;
 
 /**
  * @author Rodd.Wang

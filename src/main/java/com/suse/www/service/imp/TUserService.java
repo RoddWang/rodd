@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.suse.www.service.Impl;
+package com.suse.www.service.imp;
 
 import java.util.ArrayList;
 import java.util.List;
