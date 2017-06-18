@@ -29,12 +29,22 @@ public class User1Controller {
 	public String test(){
 		String jsonStr = "";
 		User t = new User();
-		t.setId("4");
-		t.setUsername("rodd4");
-		t.setPassword("rodd4");
+		t.setUserId("7");
+		t.setUsername("rodd7");
+		t.setPassword("rodd7");
 		userService.store(t);
         t = new User();
-        t = userService.findOne("2");
+        t = userService.findOne("6");
+        jsonStr = JSONObject.toJSONString(t);
+		return jsonStr;
+	}
+	
+	@RequestMapping("/find")
+	@ResponseBody
+	public String find(){
+		String jsonStr = "";
+		User t = new User();
+        t = userService.findOne("6");
         jsonStr = JSONObject.toJSONString(t);
 		return jsonStr;
 	}

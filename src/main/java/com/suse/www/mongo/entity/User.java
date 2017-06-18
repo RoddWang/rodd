@@ -13,19 +13,26 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "wiki.user")
 public class User {
 
-	@Id  
-	private String id;  
+	private String userId;  
 
 	private String username;  
 
 	private String password;
 
-	public String getId() {
-		return id;
+	
+	
+	/**
+	 * @return userId
+	 */
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	/**
+	 * @param userId 
+	 */
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public String getUsername() {

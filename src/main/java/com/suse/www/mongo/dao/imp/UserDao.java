@@ -76,7 +76,8 @@ public class UserDao implements IUserDao {
 	@Override
 	public User findOne(String id) {
 		Query query = new Query();
-		query.addCriteria(new Criteria("id").is(id));
+		query.addCriteria(new Criteria("userId").is(id));
+		
 		User user = mongoTemplate.findOne(query, User.class);
 		return user;
 	}
@@ -91,7 +92,7 @@ public class UserDao implements IUserDao {
 	@Override
 	public void updateFirst(User t) {
 		Query query = new Query();
-		query.addCriteria(new Criteria("id").is(t.getId()));
+		query.addCriteria(new Criteria("userId").is(t.getUserId()));
 		Update update = new Update();
 		update.set("",t.getUsername());
 		update.set("", t.getPassword());
@@ -108,7 +109,7 @@ public class UserDao implements IUserDao {
 	@Override
 	public void delete(String id) {
 		Query query = new Query();
-		query.addCriteria(new Criteria("id").is(id));
+		query.addCriteria(new Criteria("userId").is(id));
 		this.mongoTemplate.remove(query, User.class);
 		
 	}
