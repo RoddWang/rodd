@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.suse.www.activiti;
+package com.suse.www.test.activiti;
 
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngineConfiguration;
@@ -11,7 +11,7 @@ import org.junit.Test;
  * @author Rodd
  *
  */
-public class TestActiviti {
+public class TestCreateTable {
 
 	/**
 	 *  创建流程表
@@ -19,7 +19,7 @@ public class TestActiviti {
 	@Test
 	public void createTable(){
 
-		ProcessEngine processEngine = ProcessEngineConfiguration.createProcessEngineConfigurationFromResource("activiti.xml") //
+		ProcessEngine processEngine = ProcessEngineConfiguration.createProcessEngineConfigurationFromResource("activiti.cfg.xml") //
 				.buildProcessEngine();
 		System.out.println("ProcessEngine: "+processEngine);
 		
